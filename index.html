@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyRoute - Planeje suas Viagens</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .navbar {
+      transition: background-color 0.3s ease;
+    }
+    .navbar.scrolled {
+      background-color: rgba(31, 41, 55, 0.95);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <nav class="navbar fixed top-0 left-0 w-full bg-gray-900 bg-opacity-80 text-white z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold">MyRoute</a>
+      <div class="flex gap-6">
+        <a href="#features" class="hover:text-yellow-400 transition-colors">Recursos</a>
+        <a href="#download" class="hover:text-yellow-400 transition-colors">Baixar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-r from-green-500 to-blue-600 text-white h-[60vh] flex flex-col items-center justify-center text-center px-6">
+    <img src="assets/logo.png" alt="Ícone do MyRoute" class="mb-4 w-16 h-16 md:w-24 md:h-24 rounded-full">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">MyRoute</h1>
+    <p class="text-lg md:text-xl mb-4 max-w-2xl">Planeje suas viagens de forma fácil e inteligente, do ponto A ao ponto B.</p>
+    <p class="text-base md:text-lg mb-8 max-w-3xl">Com MyRoute, você tem acesso a mapas interativos, velocímetro customizado, alertas personalizáveis e muito mais. Torne suas viagens mais seguras e organizadas com ferramentas pensadas para motoristas e viajantes.</p>
+    <div class="flex gap-4">
+      <a href="#features" class="px-6 py-3 bg-white text-blue-700 rounded-full font-semibold hover:bg-gray-200 transition">Ver Recursos</a>
+      <a href="#download" class="px-6 py-3 bg-yellow-400 text-gray-900 rounded-full font-semibold hover:bg-yellow-300 transition">Baixar App</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 px-8 max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Recursos do MyRoute</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="feature-card bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/fluency/96/compass.png" alt="Mapa" class="mb-4 w-16 h-16">
+        <h3 class="text-xl font-semibold mb-2">Mapa Interativo</h3>
+        <p class="text-gray-600">Visualize sua rota do ponto de partida ao destino final, com atualização em tempo real.</p>
+      </div>
+
+      <div class="feature-card bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/fluency/96/speed.png" alt="Velocímetro" class="mb-4 w-16 h-16">
+        <h3 class="text-xl font-semibold mb-2">Distância & Tempo Estimado</h3>
+        <p class="text-gray-600">Veja quanto tempo levará e a distância total da viagem.</p>
+      </div>
+
+      <div class="feature-card bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/fluency/96/goal.png" alt="Alertas" class="mb-4 w-16 h-16">
+        <h3 class="text-xl font-semibold mb-2">Alertas de Chegada</h3>
+        <p class="text-gray-600">Receba notificações quando estiver próximo do destino.</p>
+      </div>
+
+      <div class="feature-card bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/?size=100&id=L3V7IDcwKTn2&format=png&color=000000" alt="Histórico" class="mb-4 w-16 h-16">
+        <h3 class="text-xl font-semibold mb-2">Histórico de Viagens</h3>
+        <p class="text-gray-600">Acompanhe todas as suas viagens passadas, com dados de distância e duração.</p>
+      </div>
+
+      <div class="feature-card bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/fluency/96/image.png" alt="Exportação" class="mb-4 w-16 h-16">
+        <h3 class="text-xl font-semibold mb-2">Exportação de Rotas</h3>
+        <p class="text-gray-600">Compartilhe sua rota como GIF ou imagem, mostrando o trajeto completo.</p>
+      </div>
+
+      <div class="feature-card bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/fluency/96/speedometer.png" alt="Velocímetro Customizado" class="mb-4 w-16 h-16">
+        <h3 class="text-xl font-semibold mb-2">Velocímetro Customizado</h3>
+        <p class="text-gray-600">Monitore sua velocidade com um velocímetro personalizável, com design moderno, odômetro e tempo de viagem.</p>
+      </div>
+
+      <div class="feature-card bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/fluency/96/gear.png" alt="Alerta de Troca de Marcha" class="mb-4 w-16 h-16">
+        <h3 class="text-xl font-semibold mb-2">Alerta de Troca de Marcha</h3>
+        <p class="text-gray-600">Receba alertas para trocar de marcha com base em configurações de velocidade personalizáveis, com opção de ativar/desativar som ou flash.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="py-20 bg-blue-700 text-white text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Baixe Agora</h2>
+    <p class="mb-10 text-lg">Disponível para Android, iOS e APK direto</p>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="#" class="bg-black px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/google-play.png" alt="Google Play" />
+        Google Play
+      </a>
+      <a href="#" class="bg-black px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/mac-os.png" alt="App Store" />
+        App Store
+      </a>
+      <a href="assets/files/MyRoute.apk" download class="bg-green-500 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-green-600 transition">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/download.png" alt="APK" />
+        Baixar APK
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-6 bg-gray-900 text-gray-300 text-center">
+    <p>© 2025 MyRoute. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
