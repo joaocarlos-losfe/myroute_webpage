@@ -6,11 +6,9 @@
   <title>MyRoute - Planeje suas Viagens</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
-    /* Hover animation for cards */
     .feature-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -18,14 +16,12 @@
       transform: translateY(-8px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
-    /* Navbar fixed styling */
     .navbar {
       transition: background-color 0.3s ease;
     }
     .navbar.scrolled {
       background-color: rgba(31, 41, 55, 0.95);
     }
-    /* Carousel container */
     .carousel-container {
       overflow: hidden;
       position: relative;
@@ -48,14 +44,13 @@
     <img src="assets/logo.png" alt="Ícone do MyRoute" class="mb-4 w-16 h-16 md:w-24 md:h-24 rounded-full">
     <h1 class="text-4xl md:text-5xl font-bold mb-4">MyRoute</h1>
     <p class="text-lg md:text-xl mb-4 max-w-2xl">Planeje suas viagens de forma fácil e inteligente, do ponto A ao ponto B.</p>
-    <p class="text-base md:text-lg mb-8 max-w-3xl">Com MyRoute, você tem acesso a mapas interativos, velocímetro customizado, alertas personalizáveis e muito mais. Torne suas viagens mais seguras e organizadas com ferramentas pensadas para motoristas e viajantes.</p>
+    <p class="text-base md:text-lg mb-8 max-w-3xl">Com MyRoute, você tem acesso a mapas interativos, velocímetro customizado, alertas personalizáveis e muito mais. Torne suas viagens mais seguras e organizadas com ferramentas pensadas para <b>motoristas</b>, <b>motociclistas</b> e <b>viajantes</b>.</p>
     <div class="flex gap-4">
       <a href="#features" class="px-6 py-3 bg-white text-blue-700 rounded-full font-semibold hover:bg-gray-200 transition">Ver Recursos</a>
       <a href="#download" class="px-6 py-3 bg-yellow-400 text-gray-900 rounded-full font-semibold hover:bg-yellow-300 transition">Baixar App</a>
     </div>
   </section>
 
-  <!-- Screens Carousel -->
   <section id="screens" class="py-20 bg-gray-50">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Veja o App em Ação</h2>
     <div class="max-w-5xl mx-auto relative carousel-container">
@@ -128,20 +123,22 @@
 
   <section id="download" class="py-20 bg-blue-700 text-white text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-6">Baixe Agora</h2>
-    <p class="mb-10 text-lg">Disponível para Android, iOS e APK direto</p>
+    <p class="mb-10 text-lg">Disponível para Android, iOS e APK</p>
+    
     <div class="flex flex-wrap justify-center gap-6">
+    <a href="assets/files/MyRoute.apk" download class="bg-green-500 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-green-600 transition">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/download.png" alt="APK" />
+        Baixar APK (Disponível)
+      </a>
       <a href="#" class="bg-black px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/google-play.png" alt="Google Play" />
-        Google Play
+        Google Play (em breve)
       </a>
       <a href="#" class="bg-black px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/mac-os.png" alt="App Store" />
-        App Store
+        App Store (em breve)
       </a>
-      <a href="assets/files/MyRoute.apk" download class="bg-green-500 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-green-600 transition">
-        <img src="https://img.icons8.com/ios-filled/24/ffffff/download.png" alt="APK" />
-        Baixar APK
-      </a>
+      
     </div>
   </section>
 
@@ -160,60 +157,60 @@
     });
 
     const carousel = document.getElementById('carousel-inner');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
 
-let index = 1; 
-const images = carousel.children;
-const intervalTime = 5000;
+    let index = 1; 
+    const images = carousel.children;
+    const intervalTime = 5000;
 
-const firstClone = images[0].cloneNode(true);
-const lastClone = images[images.length - 1].cloneNode(true);
-carousel.appendChild(firstClone);
-carousel.insertBefore(lastClone, images[0]);
+    const firstClone = images[0].cloneNode(true);
+    const lastClone = images[images.length - 1].cloneNode(true);
+    carousel.appendChild(firstClone);
+    carousel.insertBefore(lastClone, images[0]);
 
-function updateCarousel(transition = true) {
-  const width = images[0].offsetWidth + 16;
-  carousel.style.transition = transition ? 'transform 0.5s ease-in-out' : 'none';
-  carousel.style.transform = `translateX(${-index * width}px)`;
-}
+    function updateCarousel(transition = true) {
+    const width = images[0].offsetWidth + 16;
+    carousel.style.transition = transition ? 'transform 0.5s ease-in-out' : 'none';
+    carousel.style.transform = `translateX(${-index * width}px)`;
+    }
 
-carousel.addEventListener('transitionend', () => {
-  if (images[index] === firstClone) {
-    carousel.style.transition = 'none';
-    index = 1; 
-    updateCarousel(false);
-  } else if (images[index] === lastClone) {
-    carousel.style.transition = 'none';
-    index = images.length - 2;
-    updateCarousel(false);
-  }
-});
+    carousel.addEventListener('transitionend', () => {
+    if (images[index] === firstClone) {
+        carousel.style.transition = 'none';
+        index = 1; 
+        updateCarousel(false);
+    } else if (images[index] === lastClone) {
+        carousel.style.transition = 'none';
+        index = images.length - 2;
+        updateCarousel(false);
+    }
+    });
 
-nextBtn.addEventListener('click', () => {
-  index++;
-  updateCarousel();
-});
-
-prevBtn.addEventListener('click', () => {
-  index--;
-  updateCarousel();
-});
-
-let autoSlideInterval = setInterval(() => {
-  index++;
-  updateCarousel();
-}, intervalTime);
-
-carousel.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-carousel.parentElement.addEventListener('mouseleave', () => {
-  autoSlideInterval = setInterval(() => {
+    nextBtn.addEventListener('click', () => {
     index++;
     updateCarousel();
-  }, intervalTime);
-});
+    });
 
-updateCarousel(false);
+    prevBtn.addEventListener('click', () => {
+    index--;
+    updateCarousel();
+    });
+
+    let autoSlideInterval = setInterval(() => {
+    index++;
+    updateCarousel();
+    }, intervalTime);
+
+    carousel.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    carousel.parentElement.addEventListener('mouseleave', () => {
+    autoSlideInterval = setInterval(() => {
+        index++;
+        updateCarousel();
+    }, intervalTime);
+    });
+
+    updateCarousel(false);
 
   </script>
 </body>
